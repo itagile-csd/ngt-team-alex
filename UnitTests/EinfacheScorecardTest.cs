@@ -30,10 +30,21 @@ namespace UnitTests
         }
 
         [Test]
-        public void ErhoehtLochnummerBeiLochwechsel()
+        public void ErhoehtLochnummerBeiLochwechselUndSetzeSchlagzehlAunNull()
         {
+            _scorecard.ErhoeheAnzahlSchlaege();
+            _scorecard.ErhoeheAnzahlSchlaege();
             _scorecard.SchliesseLochAb();
             Assert.That(_scorecard.Lochnummer, Is.EqualTo(2));
+            Assert.That(_scorecard.AnzahlSchlaege,Is.EqualTo(0));
+        }
+
+        [Test]
+        public void InitialisiereSchlagzahlBeiLochwechsel()
+        {
+            _scorecard.ErhoeheAnzahlSchlaege();
+            _scorecard.SchliesseLochAb();
+            Assert.That(_scorecard.AnzahlSchlaege, Is.EqualTo(0));
         }
     }
 }

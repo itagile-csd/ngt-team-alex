@@ -1,11 +1,8 @@
 Funktionalität: Lochwechsel
 
-@ignore
 Szenario: Schlagzahl zuruecksetzen
-	Angenommen ich habe den Ball einmal geschlagen,
 	Wenn ich zum nächsten Loch gehe,
-	Und nun den Ball schlage,
-	Dann zählt der NerdGolfTracker 1 Schlag.
+	Dann zählt der NGT wieder von 0 an
 
 Szenario: Loch hochzaehlen
 	Wenn ich zum nächsten Loch gehe,
