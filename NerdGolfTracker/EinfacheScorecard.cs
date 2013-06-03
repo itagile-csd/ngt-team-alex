@@ -2,6 +2,7 @@ namespace NerdGolfTracker
 {
     public class EinfacheScorecard : Scorecard
     {
+
         public int AnzahlSchlaege { get; private set; }
         public int Lochnummer { get; private set; }
 
@@ -13,6 +14,7 @@ namespace NerdGolfTracker
         public void SchliesseLochAb()
         {
             Lochnummer++;
+            AnzahlSchlaege = 0;
         }
 
         public void ErhoeheAnzahlSchlaege()
