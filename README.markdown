@@ -1,4 +1,4 @@
-Quotes Language: german
+﻿Quotes Language: german
 
 
 # Fallstricke
@@ -12,3 +12,5 @@ Die ausführbare Spezifikation verlässt sich darauf, dass der NerdGolfTracker s
 * Beim Lochwechsel wird die Zahl der Schläge nicht zurückgesetzt.
 * Bei der Ausgabe des aktuellen Lochs fehlt ein Leerzeichen zwischen Zahl and "Loch".
 * Bei der Hilfe-Ausgabe ist die Einleitung nicht durch einen Zeilenumbruch abgetrennt.
+
+
