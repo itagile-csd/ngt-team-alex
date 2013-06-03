@@ -15,7 +15,12 @@ namespace UnitTests.Operationen
         {
             var ausgabe = new Hilfe().FuehreAus(null);
             var zeilen = ausgabe.Split(new string[] { System.Environment.NewLine }, StringSplitOptions.None);
-            Assert.That(zeilen.Length, Is.EqualTo(3));
+
+            var befehlstyp = typeof(NerdGolfTracker.Befehl);
+            var alleBefehlstypen = befehlstyp.Assembly.GetTypes().Where(befehlstyp.IsAssignableFrom);
+            var alleKonkretenBefehlstypen = alleBefehlstypen.Except(new[] { befehlstyp }).ToList();
+
+            Assert.That(zeilen.Length - 1, Is.EqualTo(alleKonkretenBefehlstypen.Count()));
         }
     }
 }
