@@ -36,6 +36,7 @@
   <ItemGroup>
     <Compile Include="Befehl.cs" />
     <Compile Include="Befehle\HilfeBefehl.cs" />
+    <Compile Include="Befehle\LochAnzeigenBefehl.cs" />
     <Compile Include="Befehle\LochwechselBefehl.cs" />
     <Compile Include="Befehle\SchlagBefehl.cs" />
     <Compile Include="AlleBefehle.cs" />
