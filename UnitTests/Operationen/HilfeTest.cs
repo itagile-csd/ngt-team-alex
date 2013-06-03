@@ -11,7 +11,7 @@ namespace UnitTests.Operationen
     class HilfeTest
     {
         [Test]
-        public void GibtEineZeileProBefehlAus()
+        public void GibtBeschreibungUndEineZeileProBefehlAus()
         {
             var ausgabe = new Hilfe().FuehreAus(null);
             var zeilen = ausgabe.Split(new string[] { System.Environment.NewLine }, StringSplitOptions.None);
@@ -20,7 +20,7 @@ namespace UnitTests.Operationen
             var alleBefehlstypen = befehlstyp.Assembly.GetTypes().Where(befehlstyp.IsAssignableFrom);
             var alleKonkretenBefehlstypen = alleBefehlstypen.Except(new[] { befehlstyp }).ToList();
 
-            Assert.That(zeilen.Length - 1, Is.EqualTo(alleKonkretenBefehlstypen.Count()));
+            Assert.That(zeilen.Length, Is.EqualTo(alleKonkretenBefehlstypen.Count() + 1));
         }
     }
 }
