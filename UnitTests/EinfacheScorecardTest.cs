@@ -22,7 +22,28 @@ namespace UnitTests
             _scorecard.ErhoeheAnzahlSchlaege();
             Assert.That(_scorecard.AnzahlSchlaege, Is.EqualTo(1));
         }
+        
+        [Test]
+        public void InitGesamtschlagzahl()
+        {
+            Assert.That(_scorecard.GesamtAnzahlSchlaege, Is.EqualTo(0));
+        }
 
+        [Test]
+        public void GesamtschlagzahlEinLoch()
+        {
+            _scorecard.ErhoeheAnzahlSchlaege();
+            Assert.That(_scorecard.GesamtAnzahlSchlaege, Is.EqualTo(1));
+        }
+
+        [Test]
+        public void GesamtschlagzahlMitLochwechsel()
+        {
+            _scorecard.ErhoeheAnzahlSchlaege();
+            _scorecard.SchliesseLochAb();
+            _scorecard.ErhoeheAnzahlSchlaege();
+            Assert.That(_scorecard.GesamtAnzahlSchlaege, Is.EqualTo(2));
+        }
         [Test]
         public void InkrementiertSchlagzahlMehrmals()
         {
