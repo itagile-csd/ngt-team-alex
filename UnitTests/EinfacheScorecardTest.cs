@@ -1,5 +1,7 @@
 ﻿using NUnit.Framework;
 using NerdGolfTracker;
+using System;
+using System.Collections.Generic;
 
 namespace UnitTests
 {
@@ -37,6 +39,8 @@ namespace UnitTests
             _scorecard.SchliesseLochAb();
             Assert.That(_scorecard.Lochnummer, Is.EqualTo(2));
             Assert.That(_scorecard.AnzahlSchlaege,Is.EqualTo(0));
+            Assert.That(_scorecard.ErgebnisZurueck[1], Is.EqualTo(2));
+            Assert.That(_scorecard.ErgebnisZurueck[2], Is.EqualTo(0));
         }
 
         [Test]
@@ -44,7 +48,39 @@ namespace UnitTests
         {
             _scorecard.ErhoeheAnzahlSchlaege();
             _scorecard.SchliesseLochAb();
+
+            Int32 lochnummer = _scorecard.Lochnummer;
+
             Assert.That(_scorecard.AnzahlSchlaege, Is.EqualTo(0));
+            
+            Assert.That(_scorecard.ErgebnisZurueck[lochnummer], Is.EqualTo(0));
         }
+
+        [Test]
+        public void UeberprüfeScorecardTabelle()
+        {
+            _scorecard.ErhoeheAnzahlSchlaege();
+            _scorecard.SchliesseLochAb();
+            _scorecard.ErhoeheAnzahlSchlaege();
+            _scorecard.ErhoeheAnzahlSchlaege();
+            _scorecard.SchliesseLochAb();
+            _scorecard.ErhoeheAnzahlSchlaege();
+            _scorecard.SchliesseLochAb();
+            _scorecard.ErhoeheAnzahlSchlaege();
+            _scorecard.ErhoeheAnzahlSchlaege();
+            _scorecard.ErhoeheAnzahlSchlaege();
+            _scorecard.SchliesseLochAb();
+
+            Dictionary<int, int> ergebnis = _scorecard.ErgebnisZurueck;
+            Assert.That(ergebnis.Count, Is.EqualTo(5));
+            Assert.That(ergebnis[1], Is.EqualTo(1));
+            Assert.That(ergebnis[2], Is.EqualTo(2));
+            Assert.That(ergebnis[3], Is.EqualTo(1));
+            Assert.That(ergebnis[4], Is.EqualTo(3));
+            Assert.That(ergebnis[5], Is.EqualTo(0));
+
+
+        }
+
     }
 }
