@@ -15,7 +15,7 @@ namespace NerdGolfTracker.Befehle
 
         public string KurzKommando
         {
-            get { return "A"; }
+            get { return "a"; }
         }
 
         public Operation Operation
