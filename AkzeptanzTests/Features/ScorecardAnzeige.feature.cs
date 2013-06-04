@@ -87,7 +87,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 4
  testRunner.When("ich folgendermassen spiele:", ((string)(null)), table1, "Wenn ");
 #line 9
- testRunner.Then("erhalte ich diese Scorcard.", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Dann ");
+ testRunner.Then("erhalte ich diese Scorecard.", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Dann ");
 #line hidden
             this.ScenarioCleanup();
         }
