@@ -22,5 +22,12 @@ namespace UnitTests
             Interpreter interpreter = new EinfacherInterpreter();
             Assert.That(interpreter.OperationFuer(kommando), Is.InstanceOf(operationstyp));
         }
+
+        [TestCase("xyz", Result = null)]
+        public object InvalidCommand(string kommando)
+        {
+            Interpreter interpreter = new EinfacherInterpreter();
+            return (interpreter.OperationFuer(kommando));
+        }
     }
 }
