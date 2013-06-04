@@ -35,6 +35,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Befehl.cs" />
+    <Compile Include="Befehle\GesamtschlaegeBefehl.cs" />
     <Compile Include="Befehle\HilfeBefehl.cs" />
     <Compile Include="Befehle\LochAnzeigenBefehl.cs" />
     <Compile Include="Befehle\LochwechselBefehl.cs" />
@@ -44,6 +45,7 @@
     <Compile Include="EinfacheScorecard.cs" />
     <Compile Include="Interpreter.cs" />
     <Compile Include="Operation.cs" />
+    <Compile Include="Operationen\Gesamtschlaege.cs" />
     <Compile Include="Operationen\Hilfe.cs" />
     <Compile Include="Operationen\Lochausgabe.cs" />
     <Compile Include="Operationen\Lochbegruessung.cs" />

@@ -12,10 +12,9 @@ namespace AkzeptanzTests.Bindings
             _driver = driver;
         }
 
-        [When(".* zum nächsten Loch.*")]
+        [When(".*zum nächsten Loch.*")]
         public void GeheZumNaechstenLoch()
         {
-            _driver.EmpfangeAnweisung("Schlage Ball");
             _driver.EmpfangeAnweisung("Naechstes Loch");
         }
 

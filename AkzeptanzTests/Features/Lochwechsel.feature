@@ -1,7 +1,8 @@
 Funktionalität: Lochwechsel
 
 Szenario: Schlagzahl zuruecksetzen
-	Wenn ich zum nächsten Loch gehe,
+	Wenn ich den Ball schlage
+	Und zum nächsten Loch gehe	
 	Dann zählt der NGT wieder von 0 an
 
 Szenario: Loch hochzaehlen
