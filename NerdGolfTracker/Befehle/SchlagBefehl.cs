@@ -9,6 +9,11 @@ namespace NerdGolfTracker.Befehle
             get { return "Schlage Ball"; }
         }
 
+        public string KurzKommando
+        {
+            get { return "S"; }
+        }
+
         public Operation Operation
         {
             get { return new Schlag(); }

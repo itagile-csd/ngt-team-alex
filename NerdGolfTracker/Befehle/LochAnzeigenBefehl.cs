@@ -13,6 +13,11 @@ namespace NerdGolfTracker.Befehle
             get { return "Aktuelles Loch"; }
         }
 
+        public string KurzKommando
+        {
+            get { return "A"; }
+        }
+
         public Operation Operation
         {
             get

@@ -9,6 +9,11 @@ namespace NerdGolfTracker.Befehle
             get { return "Naechstes Loch"; }
         }
 
+        public string KurzKommando
+        {
+            get { return "N"; }
+        }
+
         public Operation Operation
         {
             get { return new Lochwechsel(); }
