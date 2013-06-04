@@ -45,7 +45,9 @@
     <Compile Include="Bindings\LochAnzeigenSteps.cs" />
     <Compile Include="Bindings\LochwechselSteps.cs" />
     <Compile Include="Bindings\SchlaegeZaehlenSteps.cs" />
+    <Compile Include="Bindings\StorycardSteps.cs" />
     <Compile Include="Bindings\TrackerDriverFixture.cs" />
+    <Compile Include="Bindings\UnbekannteSteps.cs" />
     <Compile Include="Features\Ball schlagen.feature.cs">
       <DependentUpon>Ball schlagen.feature</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -75,6 +77,11 @@
       <DependentUpon>Lochwechsel.feature</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Features\ScorecardAnzeige.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ScorecardAnzeige.feature</DependentUpon>
     </Compile>
     <Compile Include="Features\Unbekannte Eingabe.feature.cs">
       <AutoGen>True</AutoGen>
@@ -115,6 +122,10 @@
     <None Include="Features\Lochwechsel.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Lochwechsel.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\ScorecardAnzeige.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ScorecardAnzeige.feature.cs</LastGenOutput>
     </None>
     <None Include="Features\Unbekannte Eingabe.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>

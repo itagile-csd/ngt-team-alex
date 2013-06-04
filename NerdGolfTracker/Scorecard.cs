@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+
 namespace NerdGolfTracker
 {
     public interface Scorecard
@@ -5,8 +7,9 @@ namespace NerdGolfTracker
         int AnzahlSchlaege { get; }
         int GesamtAnzahlSchlaege { get; }
         int Lochnummer { get; }
-
+        Dictionary<int, int> ErgebnisZurueck { get; }
         void ErhoeheAnzahlSchlaege();
         void SchliesseLochAb();
+
     }
 }

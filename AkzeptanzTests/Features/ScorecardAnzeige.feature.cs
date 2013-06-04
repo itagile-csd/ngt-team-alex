@@ -19,20 +19,20 @@ namespace AkzeptanzTests.Features
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "1.9.1.84")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("Unbekannte Eingabe")]
-    public partial class UnbekannteEingabeFeature
+    [NUnit.Framework.DescriptionAttribute("Scorecard anzeigen")]
+    public partial class ScorecardAnzeigenFeature
     {
         
         private static TechTalk.SpecFlow.ITestRunner testRunner;
         
-#line 1 "Unbekannte Eingabe.feature"
+#line 1 "ScorecardAnzeige.feature"
 #line hidden
         
         [NUnit.Framework.TestFixtureSetUpAttribute()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("de-DE"), "Unbekannte Eingabe", "", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("de-DE"), "Scorecard anzeigen", "", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -65,17 +65,29 @@ namespace AkzeptanzTests.Features
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Unbekannte Eingabe")]
-        public virtual void UnbekannteEingabe()
+        [NUnit.Framework.DescriptionAttribute("Scorecard anzeigen")]
+        public virtual void ScorecardAnzeigen()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Unbekannte Eingabe", new string[] {
-                        "Ignore"});
-#line 4
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Scorecard anzeigen", ((string[])(null)));
+#line 3
 this.ScenarioSetup(scenarioInfo);
-#line 5
- testRunner.When("ich eine dem NerdGolfTracker unbekannte Eingabe mache", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Wenn ");
-#line 6
- testRunner.Then("weist mich der Tracker auf die Hilfe hin", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Dann ");
+#line hidden
+            TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Loch",
+                        "Schlaege"});
+            table1.AddRow(new string[] {
+                        "1",
+                        "5"});
+            table1.AddRow(new string[] {
+                        "2",
+                        "7"});
+            table1.AddRow(new string[] {
+                        "3",
+                        "15"});
+#line 4
+ testRunner.When("ich folgendermassen spiele:", ((string)(null)), table1, "Wenn ");
+#line 9
+ testRunner.Then("erhalte ich diese Scorcard.", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Dann ");
 #line hidden
             this.ScenarioCleanup();
         }

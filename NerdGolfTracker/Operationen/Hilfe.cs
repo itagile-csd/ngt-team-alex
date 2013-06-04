@@ -14,9 +14,9 @@ namespace NerdGolfTracker.Operationen
                    + ".";
         }
 
-        private string HilfstextFuer(Befehl befehl)
+        public string HilfstextFuer(Befehl befehl)
         {
-            return string.Format(" * \"{0}\" {1}", befehl.Kommando, befehl.Erklaerung);
+            return string.Format(" * \"{0}\" [{1}] {2}", befehl.Kommando, befehl.KurzKommando,befehl.Erklaerung);
         }
     }
 }

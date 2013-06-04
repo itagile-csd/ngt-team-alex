@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using NUnit.Framework;
+using NerdGolfTracker;
 using NerdGolfTracker.Operationen;
 
 namespace UnitTests.Operationen
@@ -22,5 +23,28 @@ namespace UnitTests.Operationen
 
             Assert.That(zeilen.Length, Is.EqualTo(alleKonkretenBefehlstypen.Count() + 1));
         }
+
+        [Test]
+        public void GibtKommandKurzKomandoUndBeschreibungProBefehlAus()
+        {
+            var text = new Hilfe().HilfstextFuer(new TestBefehl());
+            string expected = string.Format(" * \"{0}\" [{1}] {2}",
+                                            TestBefehl._meintestkommando, 
+                                            TestBefehl._meintestkurzkommando,
+                                            TestBefehl._meintestkommandobeschreibung);
+            Assert.That(text, Is.EqualTo(expected));
+        }
+    }
+
+    internal class TestBefehl : Befehl
+    {
+        internal const string _meintestkommando = "MeinTestKommando";
+        internal const string _meintestkurzkommando = "MeinTestKurzKommando";
+        internal const string _meintestkommandobeschreibung = "MeinTestKommandoBeschreibung";
+
+        public string Kommando { get { return _meintestkommando; } }
+        public string KurzKommando { get { return _meintestkurzkommando; } }
+        public Operation Operation { get { return null; } }
+        public string Erklaerung { get { return _meintestkommandobeschreibung; } }
     }
 }
