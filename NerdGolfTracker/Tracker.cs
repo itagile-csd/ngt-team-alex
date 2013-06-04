@@ -15,7 +15,15 @@
 
         public string ReagiereAuf(string kommando)
         {
-            return _interpreter.OperationFuer(kommando).FuehreAus(_scorecard);
+            Operation operation = _interpreter.OperationFuer(kommando);
+            if (operation != null)
+            {
+                return operation.FuehreAus(_scorecard);
+            }
+            else
+            {
+                return "Unbekannter Befehl. \"Hilfe\" zeigt alle bekannten Befehle";
+            }
         }
 
         public string Starte()

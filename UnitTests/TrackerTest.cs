@@ -29,5 +29,17 @@ namespace UnitTests
             var tracker = new Tracker(null, null, startoperationStub.Object);
             Assert.That(tracker.Starte(), Is.EqualTo("Ausgabe"));
         }
+
+        
+        [TestCase()]
+        public void InvalidCommand_CheckErrorText()
+        {
+            var interpreterStub = new Mock<Interpreter>();
+            var operationStub = new Mock<Operation>();
+            interpreterStub.Setup(interpreter => interpreter.OperationFuer("blabla")).Returns((Operation)null);
+
+            var tracker = new Tracker(interpreterStub.Object, null, null);
+            Assert.That(tracker.ReagiereAuf("blabla"), Is.EqualTo("Unbekannter Befehl. \"Hilfe\" zeigt alle bekannten Befehle"));
+        }
     }
 }

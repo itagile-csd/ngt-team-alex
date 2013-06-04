@@ -12,8 +12,17 @@ namespace NerdGolfTracker
             if (gefundenerBefehl == null)
             {
                 gefundenerBefehl = befehle.Find(befehl => kommando == befehl.KurzKommando);
+                
             }
-            return gefundenerBefehl.Operation;
+
+            if (gefundenerBefehl == null)
+            {
+                return null;
+            }
+            else
+            {
+                return gefundenerBefehl.Operation;
+            }
         }
     }
 }
