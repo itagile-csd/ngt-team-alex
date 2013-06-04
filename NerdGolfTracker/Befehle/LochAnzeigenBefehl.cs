@@ -23,7 +23,7 @@ namespace NerdGolfTracker.Befehle
 
         public string Erklaerung 
         {
-            get { return "Zeige das aktuelle Loch an"; }
+            get { return "zeigt dir das aktuelle Loch an"; }
         }
     }
 }
