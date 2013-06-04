@@ -11,6 +11,7 @@ namespace NerdGolfTracker
             private set { ergebnis[Lochnummer] = value; } 
         }
         public int Lochnummer { get; private set; }
+        public int GesamtAnzahlSchlaege { get; private set; }
         public Dictionary<int, int> ErgebnisZurueck
         {
             get { return ergebnis; }
@@ -31,6 +32,7 @@ namespace NerdGolfTracker
         public void ErhoeheAnzahlSchlaege()
         {
             AnzahlSchlaege++;
+            GesamtAnzahlSchlaege++;
             ergebnis[Lochnummer] = AnzahlSchlaege;
         }
     }
