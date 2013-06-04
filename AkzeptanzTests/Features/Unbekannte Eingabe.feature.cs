@@ -66,7 +66,6 @@ namespace AkzeptanzTests.Features
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Unbekannte Eingabe")]
-        [NUnit.Framework.IgnoreAttribute()]
         public virtual void UnbekannteEingabe()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Unbekannte Eingabe", new string[] {

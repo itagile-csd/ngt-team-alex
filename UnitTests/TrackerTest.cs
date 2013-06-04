@@ -39,7 +39,7 @@ namespace UnitTests
             interpreterStub.Setup(interpreter => interpreter.OperationFuer("blabla")).Returns((Operation)null);
 
             var tracker = new Tracker(interpreterStub.Object, null, null);
-            Assert.That(tracker.ReagiereAuf("blabla"), Is.EqualTo("Unbekannter Befehl. \"Hilfe\" zeigt alle bekannten Befehle"));
+            Assert.That(tracker.ReagiereAuf("blabla"), Is.EqualTo("Unbekannter Befehl. \"Hilfe\" zeigt alle bekannten Befehle an."));
         }
     }
 }

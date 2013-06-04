@@ -22,7 +22,7 @@
             }
             else
             {
-                return "Unbekannter Befehl. \"Hilfe\" zeigt alle bekannten Befehle";
+                return "Unbekannter Befehl. \"Hilfe\" zeigt alle bekannten Befehle an.";
             }
         }
 
