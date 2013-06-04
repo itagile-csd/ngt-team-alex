@@ -63,21 +63,14 @@ namespace UnitTests
             _scorecard.SchliesseLochAb();
             _scorecard.ErhoeheAnzahlSchlaege();
             _scorecard.ErhoeheAnzahlSchlaege();
-            _scorecard.SchliesseLochAb();
-            _scorecard.ErhoeheAnzahlSchlaege();
-            _scorecard.SchliesseLochAb();
-            _scorecard.ErhoeheAnzahlSchlaege();
-            _scorecard.ErhoeheAnzahlSchlaege();
             _scorecard.ErhoeheAnzahlSchlaege();
             _scorecard.SchliesseLochAb();
 
             Dictionary<int, int> ergebnis = _scorecard.ErgebnisZurueck;
-            Assert.That(ergebnis.Count, Is.EqualTo(5));
+            Assert.That(ergebnis.Count, Is.EqualTo(3));
             Assert.That(ergebnis[1], Is.EqualTo(1));
-            Assert.That(ergebnis[2], Is.EqualTo(2));
-            Assert.That(ergebnis[3], Is.EqualTo(1));
-            Assert.That(ergebnis[4], Is.EqualTo(3));
-            Assert.That(ergebnis[5], Is.EqualTo(0));
+            Assert.That(ergebnis[2], Is.EqualTo(3));
+            Assert.That(ergebnis[3], Is.EqualTo(0));
 
 
         }

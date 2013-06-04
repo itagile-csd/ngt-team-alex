@@ -41,6 +41,7 @@
     <Compile Include="Befehle\LochwechselBefehl.cs" />
     <Compile Include="Befehle\SchlagBefehl.cs" />
     <Compile Include="AlleBefehle.cs" />
+    <Compile Include="Befehle\ScorecardBefehl.cs" />
     <Compile Include="EinfacherInterpreter.cs" />
     <Compile Include="EinfacheScorecard.cs" />
     <Compile Include="Interpreter.cs" />
@@ -52,6 +53,7 @@
     <Compile Include="Operationen\Lochwechsel.cs" />
     <Compile Include="Operationen\Schlag.cs" />
     <Compile Include="Operationen\Schlagausgabe.cs" />
+    <Compile Include="Operationen\ScorecardOperation.cs" />
     <Compile Include="Tracker.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
