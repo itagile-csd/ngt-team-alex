@@ -45,6 +45,7 @@
     <Compile Include="Bindings\LochwechselSteps.cs" />
     <Compile Include="Bindings\SchlaegeZaehlenSteps.cs" />
     <Compile Include="Bindings\TrackerDriverFixture.cs" />
+    <Compile Include="Bindings\UnbekannteSteps.cs" />
     <Compile Include="Features\Ball schlagen.feature.cs">
       <DependentUpon>Ball schlagen.feature</DependentUpon>
       <AutoGen>True</AutoGen>
