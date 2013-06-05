@@ -42,16 +42,12 @@ namespace AkzeptanzTests.Bindings
         {
             _driver.EmpfangeAnweisung("Scorecard");
             string result = _driver.GetLetzteAntwort();
-            result = "Loch | Schlaege" + Environment.NewLine +
-                     "1 | 5" + Environment.NewLine +
-                     "2 | 7" + Environment.NewLine +
-                     "3 | 15" + Environment.NewLine;
-
-            //string[] rows = result.Split(new[] { Environment.NewLine }, StringSplitOptions.None);
         
             foreach (var keyValuePair in _LochUndSchlaege)
             {
-                Assert.True(Regex.IsMatch(result, String.Format(@"{0}.*{1}", keyValuePair.Key, keyValuePair.Value)));
+                Assert.True(Regex.IsMatch(result, String.Format(@"{0}.*{1}", keyValuePair.Key, keyValuePair.Value)), 
+                            string.Format("Es gibt Unterschiede in Loch: {0}\n  Erwarteter Wert: {1}", keyValuePair.Key, keyValuePair.Value));
+
             }            
         }
     }

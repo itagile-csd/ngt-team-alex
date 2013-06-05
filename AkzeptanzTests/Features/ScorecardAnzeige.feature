@@ -1,5 +1,5 @@
 ﻿Funktionalität: Scorecard anzeigen
-@ignore
+
 Szenario: Scorecard anzeigen
 	Wenn ich folgendermassen spiele:
 	| Loch | Schlaege |
