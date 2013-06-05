@@ -9,7 +9,11 @@ namespace NerdGolfTracker.Befehle
     internal class ScorecardBefehl : BefehlBasis
     {
         public ScorecardBefehl()
-            : base("Scorecard", "c", "zeigt Dir die Scorecard", new ScorecardOperation())
+            : base(
+                Commandos.Commando.Scorecard, 
+                Commandos.Commando.ScorecardKurz, 
+                "zeigt Dir die Scorecard", 
+                new ScorecardOperation())
         {
         }
     }

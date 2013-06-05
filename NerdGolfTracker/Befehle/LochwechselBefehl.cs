@@ -5,7 +5,11 @@ namespace NerdGolfTracker.Befehle
     public class LochwechselBefehl : BefehlBasis
     {
         public LochwechselBefehl()
-            : base("Naechstes Loch", "n", "bringt Dich zum naechsten Loch", new Lochwechsel())
+            : base(
+                Commandos.Commando.NaechstesLoch, 
+                Commandos.Commando.NaechstesLochKurz, 
+                "bringt Dich zum naechsten Loch", 
+                new Lochwechsel())
         {
         }
     }

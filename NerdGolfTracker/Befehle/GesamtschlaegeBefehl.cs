@@ -10,8 +10,8 @@ namespace NerdGolfTracker.Befehle
     {
         public GesamtschlaegeBefehl()
             : base(
-                "Gesamte Schlaege",
-                "g",
+                Commandos.Commando.GesamtAnzahlSchlaege,
+                Commandos.Commando.GesamtAnzahlSchlaegeKurz,
                 "zeigt Dir die Gesamtzahl der Schlaege",
                 new Gesamtschlaege())
         {

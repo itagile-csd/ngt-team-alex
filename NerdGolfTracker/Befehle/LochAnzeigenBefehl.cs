@@ -9,7 +9,11 @@ namespace NerdGolfTracker.Befehle
     class LochAnzeigenBefehl : BefehlBasis
     {
         public LochAnzeigenBefehl()
-            : base("Aktuelles Loch", "a", "zeigt Dir das aktuelle Loch", new Lochbegruessung())
+            : base(
+                Commandos.Commando.AktuellesLoch, 
+                Commandos.Commando.AktuellesLochKurz, 
+                "zeigt Dir das aktuelle Loch", 
+                new Lochbegruessung())
         {
         }
     }

@@ -6,7 +6,10 @@ namespace NerdGolfTracker.Befehle
     {
         public HilfeBefehl()
             : base(
-                "Hilfe", "h", "zeigt Dir diese Erklaerung", new Hilfe(new AlleBefehle()))
+                Commandos.Commando.Hilfe,
+                Commandos.Commando.HilfeKurz,
+                "zeigt Dir diese Erklaerung",
+                new Hilfe(new AlleBefehle()))
         {
         }
     }

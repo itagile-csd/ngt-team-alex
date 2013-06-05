@@ -8,6 +8,7 @@
         public const string NaechstesLoch = "Naechstes Loch";
         public const string SchlageBall = "Schlage Ball";
         public const string Scorecard = "Scorecard";
+        public const string Undo = "Undo";
 
         #region Kurzbefehle
 
@@ -17,6 +18,7 @@
         public const string NaechstesLochKurz = "n";
         public const string SchlageBallKurz = "s";
         public const string ScorecardKurz = "c";
+        public const string UndoKurz = "u";
 
         #endregion
 

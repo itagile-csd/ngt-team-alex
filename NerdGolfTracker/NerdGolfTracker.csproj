@@ -36,6 +36,7 @@
   <ItemGroup>
     <Compile Include="Befehle\Commandos\Commando.cs" />
     <Compile Include="Befehle\BefehlBasis.cs" />
+    <Compile Include="Befehle\UndoBefehl.cs" />
     <Compile Include="IBefehl.cs" />
     <Compile Include="Befehle\GesamtschlaegeBefehl.cs" />
     <Compile Include="Befehle\HilfeBefehl.cs" />
@@ -57,6 +58,7 @@
     <Compile Include="Operationen\Schlag.cs" />
     <Compile Include="Operationen\Schlagausgabe.cs" />
     <Compile Include="Operationen\ScorecardOperation.cs" />
+    <Compile Include="Operationen\Undo.cs" />
     <Compile Include="Tracker.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
