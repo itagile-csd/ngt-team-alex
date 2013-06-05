@@ -14,7 +14,7 @@ namespace NerdGolfTracker.Befehle
             get { return "s"; }
         }
 
-        public Operation Operation
+        public IOperation Operation
         {
             get { return new Schlag(); }
         }

@@ -10,11 +10,11 @@ namespace UnitTests
         [Test]
         public void GibtErgebnisDerAusgeloestenOperationZurueck()
         {
-            var interpreterStub = new Mock<Interpreter>();
-            var operationStub = new Mock<Operation>();
+            var interpreterStub = new Mock<IInterpreter>();
+            var operationStub = new Mock<IOperation>();
             interpreterStub.Setup(interpreter => interpreter.OperationFuer("Eingabe"))
                 .Returns(operationStub.Object);
-            operationStub.Setup(operation => operation.FuehreAus(It.IsAny<Scorecard>()))
+            operationStub.Setup(operation => operation.FuehreAus(It.IsAny<IScorecard>()))
                 .Returns("Ausgabe");
             var tracker = new Tracker(interpreterStub.Object, null, null);
             Assert.That(tracker.ReagiereAuf("Eingabe"), Is.EqualTo("Ausgabe"));
@@ -23,8 +23,8 @@ namespace UnitTests
         [Test]
         public void GibtErgebnisDerStartoperationZurueck()
         {
-            var startoperationStub = new Mock<Operation>();
-            startoperationStub.Setup(operation => operation.FuehreAus(It.IsAny<Scorecard>()))
+            var startoperationStub = new Mock<IOperation>();
+            startoperationStub.Setup(operation => operation.FuehreAus(It.IsAny<IScorecard>()))
                 .Returns("Ausgabe");
             var tracker = new Tracker(null, null, startoperationStub.Object);
             Assert.That(tracker.Starte(), Is.EqualTo("Ausgabe"));
@@ -34,9 +34,9 @@ namespace UnitTests
         [TestCase()]
         public void InvalidCommand_CheckErrorText()
         {
-            var interpreterStub = new Mock<Interpreter>();
-            var operationStub = new Mock<Operation>();
-            interpreterStub.Setup(interpreter => interpreter.OperationFuer("blabla")).Returns((Operation)null);
+            var interpreterStub = new Mock<IInterpreter>();
+            var operationStub = new Mock<IOperation>();
+            interpreterStub.Setup(interpreter => interpreter.OperationFuer("blabla")).Returns((IOperation)null);
 
             var tracker = new Tracker(interpreterStub.Object, null, null);
             Assert.That(tracker.ReagiereAuf("blabla"), Is.EqualTo("Unbekannter Befehl. \"Hilfe\" zeigt alle bekannten Befehle an."));

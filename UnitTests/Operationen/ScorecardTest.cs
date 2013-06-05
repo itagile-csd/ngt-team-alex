@@ -13,7 +13,7 @@ namespace UnitTests.Operationen
     [TestFixture]
     class ScorecardTest
     {
-        private Scorecard _scorecard;
+        private IScorecard _scorecard;
 
         [SetUp]
         public void InitialisiereScorecard()

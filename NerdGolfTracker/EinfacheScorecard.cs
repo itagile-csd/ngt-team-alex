@@ -3,7 +3,7 @@ using System.Linq;
 
 namespace NerdGolfTracker
 {
-    public class EinfacheScorecard : Scorecard
+    public class EinfacheScorecard : IScorecard
     {
         private Dictionary<int, int> ergebnis = new Dictionary<int, int>();
         public int AnzahlSchlaege

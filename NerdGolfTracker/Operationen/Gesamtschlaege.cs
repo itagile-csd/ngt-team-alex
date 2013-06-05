@@ -1,8 +1,8 @@
 ﻿namespace NerdGolfTracker.Operationen
 {
-    public class Gesamtschlaege : Operation
+    public class Gesamtschlaege : IOperation
     {
-        public string FuehreAus(Scorecard scorecard)
+        public string FuehreAus(IScorecard scorecard)
         {
             return string.Format("Gesamtzahl deiner Schlaege ist: {0}", scorecard.GesamtAnzahlSchlaege);
         }

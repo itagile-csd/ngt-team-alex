@@ -3,15 +3,14 @@ using NerdGolfTracker.Befehle;
 
 namespace NerdGolfTracker
 {
-    public class EinfacherInterpreter : Interpreter
+    public class EinfacherInterpreter : IInterpreter
     {
-        public Operation OperationFuer(string kommando)
+        public IOperation OperationFuer(string kommando)
         {
-            Operation operationResult = null;
+            IOperation operationResult = null;
 
             List<IBefehl> befehle = new AlleBefehle().Befehle();
-            IBefehl gefundenerBefehl =
-                befehle.Find(befehl => ((kommando == befehl.Kommando) || (kommando == befehl.KurzKommando)));
+            IBefehl gefundenerBefehl = befehle.Find(befehl => ((kommando == befehl.Kommando) || (kommando == befehl.KurzKommando)));
 
             if (gefundenerBefehl != null)
             {
