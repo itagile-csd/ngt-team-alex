@@ -16,7 +16,7 @@ namespace UnitTests.Operationen
         [Test]
         public void AktuellesLochAnzeigen()
         {
-            var scorecardStub = new Mock<Scorecard>();
+            var scorecardStub = new Mock<IScorecard>();
             scorecardStub.Setup(scorecard => scorecard.Lochnummer).Returns(2);
             Assert.That(new Lochbegruessung().FuehreAus(scorecardStub.Object),
                 Contains.Substring("auf dem 2. Loch"));

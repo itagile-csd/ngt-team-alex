@@ -2,7 +2,7 @@ using System.Collections.Generic;
 
 namespace NerdGolfTracker
 {
-    public interface Scorecard
+    public interface IScorecard
     {
         int AnzahlSchlaege { get; }
         int GesamtAnzahlSchlaege { get; }

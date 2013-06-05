@@ -44,7 +44,7 @@ namespace UnitTests.Operationen
 
         public string Kommando { get { return _meintestkommando; } }
         public string KurzKommando { get { return _meintestkurzkommando; } }
-        public Operation Operation { get { return null; } }
+        public IOperation Operation { get { return null; } }
         public string Erklaerung { get { return _meintestkommandobeschreibung; } }
     }
 }

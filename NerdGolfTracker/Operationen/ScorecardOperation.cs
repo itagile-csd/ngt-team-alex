@@ -5,10 +5,10 @@ using System.Text;
 
 namespace NerdGolfTracker.Operationen
 {
-    public class ScorecardOperation : Operation
+    public class ScorecardOperation : IOperation
     {
         private readonly string c_Header = " Loch | Schläge" + Environment.NewLine;
-        public string FuehreAus(Scorecard scorecard)
+        public string FuehreAus(IScorecard scorecard)
         {
             String gesamtAnzeige = c_Header;
             for (int i = 1; scorecard != null && i <= scorecard.ErgebnisZurueck.Count; i++)

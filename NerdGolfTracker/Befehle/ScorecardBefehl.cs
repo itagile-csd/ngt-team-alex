@@ -18,7 +18,7 @@ namespace NerdGolfTracker.Befehle
             get { return "c"; }
         }
 
-        public Operation Operation
+        public IOperation Operation
         {
             get { return new ScorecardOperation(); }
         }

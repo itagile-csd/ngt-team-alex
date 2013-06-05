@@ -14,7 +14,7 @@ namespace NerdGolfTracker.Befehle
             get { return "n"; }
         }
 
-        public Operation Operation
+        public IOperation Operation
         {
             get { return new Lochwechsel(); }
         }

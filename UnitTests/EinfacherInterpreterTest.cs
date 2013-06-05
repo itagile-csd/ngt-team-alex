@@ -21,14 +21,14 @@ namespace UnitTests
         [TestCase("g", typeof(Gesamtschlaege))]
         public void FindetOperation(string kommando, Type operationstyp)
         {
-            Interpreter interpreter = new EinfacherInterpreter();
+            IInterpreter interpreter = new EinfacherInterpreter();
             Assert.That(interpreter.OperationFuer(kommando), Is.InstanceOf(operationstyp));
         }
 
         [TestCase("xyz", Result = null)]
         public object InvalidCommand(string kommando)
         {
-            Interpreter interpreter = new EinfacherInterpreter();
+            IInterpreter interpreter = new EinfacherInterpreter();
             return (interpreter.OperationFuer(kommando));
         }
     }

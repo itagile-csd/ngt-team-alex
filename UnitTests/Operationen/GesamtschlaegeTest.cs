@@ -18,7 +18,7 @@ namespace UnitTests.Operationen
         [Test]
         public void GesamtschlaegeAnzeigen()
         {
-            var scorecardStub = new Mock<Scorecard>();
+            var scorecardStub = new Mock<IScorecard>();
             scorecardStub.Setup(scorecard => scorecard.GesamtAnzahlSchlaege).Returns(2);
             Assert.That(new Gesamtschlaege().FuehreAus(scorecardStub.Object),
                 Contains.Substring("Gesamtzahl deiner Schlaege ist: 2"));
