@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using TechTalk.SpecFlow;
+using NerdGolfTracker.Befehle.Commandos;
 
 namespace AkzeptanzTests.Bindings
 {
@@ -19,7 +20,7 @@ namespace AkzeptanzTests.Bindings
         [When(@"ich den Befehl aktuelles Loch anzeigen aufrufe")]
         public void ZeigeAktuellesLoch()
         {
-            _driver.EmpfangeAnweisung("Aktuelles Loch");
+            _driver.EmpfangeAnweisung(Commando.AktuellesLoch);
         }
 
        [Then(@"schreibt der NerdGolfTracker (.*)\.Loch")]

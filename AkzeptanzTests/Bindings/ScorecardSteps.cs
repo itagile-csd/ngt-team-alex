@@ -5,6 +5,8 @@ using System.Text;
 using System.Text.RegularExpressions;
 using NUnit.Framework;
 using TechTalk.SpecFlow;
+using NerdGolfTracker.Befehle.Commandos;
+
 
 namespace AkzeptanzTests.Bindings
 {
@@ -30,9 +32,9 @@ namespace AkzeptanzTests.Bindings
 
                 for (int i = 0; i < schlaegeInRow; ++i)
                 {
-                    _driver.EmpfangeAnweisung("Schlage Ball");
+                    _driver.EmpfangeAnweisung(Commando.SchlageBall);
                 }
-                _driver.EmpfangeAnweisung("Naechstes Loch");
+                _driver.EmpfangeAnweisung(Commando.NaechstesLoch);
                 _LochUndSchlaege.Add(lochInRow, schlaegeInRow);
             }
         }
@@ -40,7 +42,7 @@ namespace AkzeptanzTests.Bindings
         [Then(@"erhalte ich diese Scorecard.*")]
         public void DannErhalteIchDieseScorcard()
         {
-            _driver.EmpfangeAnweisung("Scorecard");
+            _driver.EmpfangeAnweisung(Commando.Scorecard);
             string result = _driver.GetLetzteAntwort();
         
             foreach (var keyValuePair in _LochUndSchlaege)

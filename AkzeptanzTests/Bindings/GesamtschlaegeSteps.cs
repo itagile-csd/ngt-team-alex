@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using TechTalk.SpecFlow;
+using NerdGolfTracker.Befehle.Commandos;
+
 
 namespace AkzeptanzTests.Bindings
 {
@@ -19,7 +21,7 @@ namespace AkzeptanzTests.Bindings
         [Then(@".* insgesamt (.*) Schlaege")]
         public void PruefeGesamtschlaege(string gesamt)
         {
-            _driver.EmpfangeAnweisung("g");
+            _driver.EmpfangeAnweisung(Commando.GesamtAnzahlSchlaegeKurz);
             _driver.AssertThatAntwortContains("{0}", gesamt);
         }
     }
