@@ -17,7 +17,7 @@ namespace UnitTests.Operationen
             var ausgabe = new Hilfe().FuehreAus(null);
             var zeilen = ausgabe.Split(new string[] { System.Environment.NewLine }, StringSplitOptions.None);
 
-            var befehlstyp = typeof(NerdGolfTracker.Befehl);
+            var befehlstyp = typeof(NerdGolfTracker.IBefehl);
             var alleBefehlstypen = befehlstyp.Assembly.GetTypes().Where(befehlstyp.IsAssignableFrom);
             var alleKonkretenBefehlstypen = alleBefehlstypen.Except(new[] { befehlstyp }).ToList();
 
@@ -36,7 +36,7 @@ namespace UnitTests.Operationen
         }
     }
 
-    internal class TestBefehl : Befehl
+    internal class TestBefehl : IBefehl
     {
         internal const string _meintestkommando = "MeinTestKommando";
         internal const string _meintestkurzkommando = "MeinTestKurzKommando";

@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace NerdGolfTracker.Operationen
+﻿namespace NerdGolfTracker.Operationen
 {
     public class Gesamtschlaege : Operation
     {

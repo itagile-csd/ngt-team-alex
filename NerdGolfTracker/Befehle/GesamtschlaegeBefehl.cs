@@ -6,7 +6,7 @@ using NerdGolfTracker.Operationen;
 
 namespace NerdGolfTracker.Befehle
 {
-    class GesamtschlaegeBefehl : Befehl
+    class GesamtschlaegeBefehl : IBefehl
     {
         public string Kommando
         {

@@ -2,7 +2,7 @@ using NerdGolfTracker.Operationen;
 
 namespace NerdGolfTracker.Befehle
 {
-    public class LochwechselBefehl : Befehl
+    public class LochwechselBefehl : IBefehl
     {
         public string Kommando
         {

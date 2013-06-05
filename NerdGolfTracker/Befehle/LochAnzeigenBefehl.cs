@@ -6,7 +6,7 @@ using NerdGolfTracker.Operationen;
 
 namespace NerdGolfTracker.Befehle
 {
-    public class LochAnzeigenBefehl : Befehl
+    public class LochAnzeigenBefehl : IBefehl
     {
         public string Kommando
         {
