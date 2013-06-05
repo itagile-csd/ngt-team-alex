@@ -6,29 +6,11 @@ using NerdGolfTracker.Operationen;
 
 namespace NerdGolfTracker.Befehle
 {
-    public class LochAnzeigenBefehl : IBefehl
+    class LochAnzeigenBefehl : BefehlBasis
     {
-        public string Kommando
+        public LochAnzeigenBefehl()
+            : base("Aktuelles Loch", "a", "zeigt Dir das aktuelle Loch", new Lochbegruessung())
         {
-            get { return "Aktuelles Loch"; }
-        }
-
-        public string KurzKommando
-        {
-            get { return "a"; }
-        }
-
-        public IOperation Operation
-        {
-            get
-            {
-                return new Lochbegruessung();
-            }
-        }
-
-        public string Erklaerung 
-        {
-            get { return "zeigt Dir das aktuelle Loch"; }
         }
     }
 }
