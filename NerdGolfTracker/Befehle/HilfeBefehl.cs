@@ -16,7 +16,7 @@ namespace NerdGolfTracker.Befehle
 
         public IOperation Operation
         {
-            get { return new Hilfe(); }
+            get { return new Hilfe(new AlleBefehle()); }
         }
 
         public string Erklaerung

@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace NerdGolfTracker
 {
-    class AlleBefehle
+    class AlleBefehle : IBefehleListe
     {
         public List<IBefehl> Befehle()
         {

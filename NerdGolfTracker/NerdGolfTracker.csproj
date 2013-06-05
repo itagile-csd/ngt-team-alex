@@ -45,6 +45,7 @@
     <Compile Include="Befehle\ScorecardBefehl.cs" />
     <Compile Include="EinfacherInterpreter.cs" />
     <Compile Include="EinfacheScorecard.cs" />
+    <Compile Include="IBefehleListe.cs" />
     <Compile Include="IInterpreter.cs" />
     <Compile Include="IOperation.cs" />
     <Compile Include="Operationen\Gesamtschlaege.cs" />
