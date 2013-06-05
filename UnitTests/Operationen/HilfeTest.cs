@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Moq;
 using NUnit.Framework;
 using NerdGolfTracker;
 using NerdGolfTracker.Operationen;
@@ -14,20 +15,21 @@ namespace UnitTests.Operationen
         [Test]
         public void GibtBeschreibungUndEineZeileProBefehlAus()
         {
-            var ausgabe = new Hilfe().FuehreAus(null);
+            var befehlMock = new Mock<IBefehl>();
+
+            var befehleMock = new Mock<IBefehleListe>();
+            befehleMock.Setup(befehle => befehle.Befehle()).Returns(new List<IBefehl> {befehlMock.Object});
+
+            var ausgabe = new Hilfe(befehleMock.Object).FuehreAus(null);
             var zeilen = ausgabe.Split(new string[] { System.Environment.NewLine }, StringSplitOptions.None);
 
-            var befehlstyp = typeof(NerdGolfTracker.IBefehl);
-            var alleBefehlstypen = befehlstyp.Assembly.GetTypes().Where(befehlstyp.IsAssignableFrom);
-            var alleKonkretenBefehlstypen = alleBefehlstypen.Except(new[] { befehlstyp }).ToList();
-
-            Assert.That(zeilen.Length, Is.EqualTo(alleKonkretenBefehlstypen.Count() + 1));
+            Assert.That(zeilen.Length, Is.EqualTo(1 + 1));
         }
 
         [Test]
         public void GibtKommandKurzKomandoUndBeschreibungProBefehlAus()
         {
-            var text = new Hilfe().HilfstextFuer(new TestBefehl());
+            var text = new Hilfe(null).HilfstextFuer(new TestBefehl());
             string expected = string.Format(" * \"{0}\" [{1}] {2}",
                                             TestBefehl._meintestkommando, 
                                             TestBefehl._meintestkurzkommando,

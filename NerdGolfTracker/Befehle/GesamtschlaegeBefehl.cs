@@ -6,29 +6,16 @@ using NerdGolfTracker.Operationen;
 
 namespace NerdGolfTracker.Befehle
 {
-    class GesamtschlaegeBefehl : IBefehl
+    class GesamtschlaegeBefehl : BefehlBasis
     {
-        public string Kommando
+        public GesamtschlaegeBefehl()
+            : base(
+                "Gesamte Schlaege",
+                "g",
+                "zeigt Dir die Gesamtzahl der Schlaege",
+                new Gesamtschlaege())
         {
-            get { return "Gesamte Schlaege"; }
-        }
 
-        public string KurzKommando
-        {
-            get { return "g"; }
-        }
-
-        public IOperation Operation
-        {
-            get
-            {
-                return new Gesamtschlaege();
-            }
-        }
-
-        public string Erklaerung
-        {
-            get { return "zeigt Dir die Gesamtzahl der Schlaege"; }
         }
     }
 }

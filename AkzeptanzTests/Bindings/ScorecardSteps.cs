@@ -11,13 +11,13 @@ using NerdGolfTracker.Befehle.Commandos;
 namespace AkzeptanzTests.Bindings
 {
     [Binding]
-    class StorycardSteps
+    class ScorecardSteps
     {
         private readonly TrackerDriver _driver;
 
         private Dictionary<int, int> _LochUndSchlaege = new Dictionary<int, int>();
 
-        public StorycardSteps(TrackerDriver driver)
+        public ScorecardSteps(TrackerDriver driver)
         {
             _driver = driver;
         }

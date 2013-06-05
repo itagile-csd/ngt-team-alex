@@ -2,26 +2,11 @@ using NerdGolfTracker.Operationen;
 
 namespace NerdGolfTracker.Befehle
 {
-    public class SchlagBefehl : IBefehl
+    public class SchlagBefehl : BefehlBasis
     {
-        public string Kommando
+        public SchlagBefehl()
+            : base("Schlage Ball", "s", "zaehlt einen Schlag", new Schlag())
         {
-            get { return "Schlage Ball"; }
-        }
-
-        public string KurzKommando
-        {
-            get { return "s"; }
-        }
-
-        public IOperation Operation
-        {
-            get { return new Schlag(); }
-        }
-
-        public string Erklaerung
-        {
-            get { return "zaehlt einen Schlag"; }
         }
     }
 }

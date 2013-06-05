@@ -34,8 +34,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Befehle\Commandos\Commando.cs" />
+<<<<<<< HEAD
     <Compile Include="Befehle\BefehlBasis.cs" />
+=======
+    <Compile Include="Befehle\Commandos\Commando.cs" />
+>>>>>>> 05ce5bd25bc7948b1017e0e6fe12cef63a2067fc
     <Compile Include="IBefehl.cs" />
     <Compile Include="Befehle\GesamtschlaegeBefehl.cs" />
     <Compile Include="Befehle\HilfeBefehl.cs" />
@@ -46,10 +49,8 @@
     <Compile Include="Befehle\ScorecardBefehl.cs" />
     <Compile Include="EinfacherInterpreter.cs" />
     <Compile Include="EinfacheScorecard.cs" />
-    <Compile Include="IBefehleListe.cs" />
     <Compile Include="IInterpreter.cs" />
     <Compile Include="IOperation.cs" />
-    <Compile Include="Operationen\FallbackOperation.cs" />
     <Compile Include="Operationen\Gesamtschlaege.cs" />
     <Compile Include="Operationen\Hilfe.cs" />
     <Compile Include="Operationen\Lochausgabe.cs" />

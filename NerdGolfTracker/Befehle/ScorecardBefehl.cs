@@ -6,26 +6,11 @@ using NerdGolfTracker.Operationen;
 
 namespace NerdGolfTracker.Befehle
 {
-    internal class ScorecardBefehl : IBefehl
+    internal class ScorecardBefehl : BefehlBasis
     {
-        public string Kommando
+        public ScorecardBefehl()
+            : base("Scorecard", "c", "zeigt Dir die Scorecard", new ScorecardOperation())
         {
-            get { return "Scorecard"; }
-        }
-
-        public string KurzKommando
-        {
-            get { return "c"; }
-        }
-
-        public IOperation Operation
-        {
-            get { return new ScorecardOperation(); }
-        }
-
-        public string Erklaerung
-        {
-            get { return "zeigt Dir die Scorecard"; }
         }
     }
 }
