@@ -16,7 +16,7 @@ namespace UnitTests
                 .Returns(operationStub.Object);
             operationStub.Setup(operation => operation.FuehreAus(It.IsAny<IScorecard>()))
                 .Returns("Ausgabe");
-            var tracker = new Tracker(interpreterStub.Object, null, null);
+            var tracker = new Tracker(interpreterStub.Object, null, null, null);
             Assert.That(tracker.ReagiereAuf("Eingabe"), Is.EqualTo("Ausgabe"));
         }
 
@@ -26,7 +26,7 @@ namespace UnitTests
             var startoperationStub = new Mock<IOperation>();
             startoperationStub.Setup(operation => operation.FuehreAus(It.IsAny<IScorecard>()))
                 .Returns("Ausgabe");
-            var tracker = new Tracker(null, null, startoperationStub.Object);
+            var tracker = new Tracker(null, null, startoperationStub.Object, null);
             Assert.That(tracker.Starte(), Is.EqualTo("Ausgabe"));
         }
 
@@ -35,10 +35,13 @@ namespace UnitTests
         public void InvalidCommand_CheckErrorText()
         {
             var interpreterStub = new Mock<IInterpreter>();
-            var operationStub = new Mock<IOperation>();
             interpreterStub.Setup(interpreter => interpreter.OperationFuer("blabla")).Returns((IOperation)null);
+       
+            var fallbackOperationStub = new Mock<IOperation>();
+            fallbackOperationStub.Setup(operation => operation.FuehreAus(It.IsAny<IScorecard>()))
+                .Returns("Unbekannter Befehl. \"Hilfe\" zeigt alle bekannten Befehle an.");
 
-            var tracker = new Tracker(interpreterStub.Object, null, null);
+            var tracker = new Tracker(interpreterStub.Object, null, null, fallbackOperationStub.Object);
             Assert.That(tracker.ReagiereAuf("blabla"), Is.EqualTo("Unbekannter Befehl. \"Hilfe\" zeigt alle bekannten Befehle an."));
         }
     }

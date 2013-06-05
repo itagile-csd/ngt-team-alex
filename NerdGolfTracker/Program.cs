@@ -1,6 +1,7 @@
 ﻿using System;
 using NerdGolfTracker.Operationen;
 
+
 namespace NerdGolfTracker
 {
     class Program
@@ -9,7 +10,9 @@ namespace NerdGolfTracker
         {
             var tracker = new Tracker(new EinfacherInterpreter(),
                                       new EinfacheScorecard(),
-                                      new Lochbegruessung());
+                                      new Lochbegruessung(),
+                                      new FallbackOperation());
+
             Console.WriteLine(tracker.Starte());
             while (true)
             {
