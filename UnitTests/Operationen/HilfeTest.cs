@@ -18,7 +18,8 @@ namespace UnitTests.Operationen
             var zeilen = ausgabe.Split(new string[] { System.Environment.NewLine }, StringSplitOptions.None);
 
             var befehlstyp = typeof(NerdGolfTracker.IBefehl);
-            var alleBefehlstypen = befehlstyp.Assembly.GetTypes().Where(befehlstyp.IsAssignableFrom);
+            var alleBefehlstypen = befehlstyp.Assembly.GetTypes().Where(type => befehlstyp.IsAssignableFrom(type));
+            alleBefehlstypen = alleBefehlstypen.Where(type => !type.IsAbstract);
             var alleKonkretenBefehlstypen = alleBefehlstypen.Except(new[] { befehlstyp }).ToList();
 
             Assert.That(zeilen.Length, Is.EqualTo(alleKonkretenBefehlstypen.Count() + 1));
@@ -29,7 +30,7 @@ namespace UnitTests.Operationen
         {
             var text = new Hilfe().HilfstextFuer(new TestBefehl());
             string expected = string.Format(" * \"{0}\" [{1}] {2}",
-                                            TestBefehl._meintestkommando, 
+                                            TestBefehl._meintestkommando,
                                             TestBefehl._meintestkurzkommando,
                                             TestBefehl._meintestkommandobeschreibung);
             Assert.That(text, Is.EqualTo(expected));
