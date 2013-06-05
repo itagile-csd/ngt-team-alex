@@ -28,7 +28,7 @@ namespace UnitTests.Operationen
             var lines = resultText.Split(new[] { Environment.NewLine }, StringSplitOptions.None);
             var firstLine = lines.First();
             Assert.That(firstLine, Contains.Substring("Loch"));
-            Assert.That(firstLine, Contains.Substring("Schläge"));
+            Assert.That(firstLine, Contains.Substring("Schlaege"));
         }
 
         [Test]
@@ -47,6 +47,40 @@ namespace UnitTests.Operationen
             var thirdLine = lines[2];
             thirdLine = thirdLine.Replace(" ", string.Empty);
             Assert.That(thirdLine.StartsWith("2") && thirdLine.EndsWith("0"), "Loch und Anzahl ist wrong");
+        }
+
+        [Test]
+        public void ScoreCard_Formatierung()
+        {
+            _scorecard.ErhoeheAnzahlSchlaege();
+            _scorecard.ErhoeheAnzahlSchlaege();
+
+            string resultText = new ScorecardOperation().FuehreAus(_scorecard);
+            var lines = resultText.Split(new[] { Environment.NewLine }, StringSplitOptions.None);
+            var secondLine = lines[1];
+
+            Assert.AreEqual("    1 |        2", secondLine);
+
+            _scorecard.SchliesseLochAb();
+            _scorecard.ErhoeheAnzahlSchlaege(); 
+            _scorecard.ErhoeheAnzahlSchlaege();
+            _scorecard.ErhoeheAnzahlSchlaege();
+            _scorecard.ErhoeheAnzahlSchlaege();
+            _scorecard.ErhoeheAnzahlSchlaege();
+            _scorecard.ErhoeheAnzahlSchlaege();
+            _scorecard.ErhoeheAnzahlSchlaege();
+            _scorecard.ErhoeheAnzahlSchlaege();
+            _scorecard.ErhoeheAnzahlSchlaege();
+            _scorecard.ErhoeheAnzahlSchlaege();
+            _scorecard.ErhoeheAnzahlSchlaege();
+
+            resultText = new ScorecardOperation().FuehreAus(_scorecard);
+            lines = resultText.Split(new[] { Environment.NewLine }, StringSplitOptions.None);
+            string thirdLine = lines[2];
+
+            Assert.AreEqual("    2 |       11", thirdLine);
+            
+
         }
     }
 }

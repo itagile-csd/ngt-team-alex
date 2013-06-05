@@ -1,4 +1,5 @@
 ﻿using TechTalk.SpecFlow;
+using NerdGolfTracker.Befehle.Commandos;
 
 namespace AkzeptanzTests.Bindings
 {
@@ -15,7 +16,7 @@ namespace AkzeptanzTests.Bindings
         [When(@"ich die Hilfe aufrufe,")]
         public void RufeHilfeAuf()
         {
-            _driver.EmpfangeAnweisung("Hilfe");
+            _driver.EmpfangeAnweisung(Commando.Hilfe);
         }
 
         [Then(@"zeigt der NerdGolfTracker seine Benutzung an.")]
