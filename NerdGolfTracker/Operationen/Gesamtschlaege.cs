@@ -4,7 +4,7 @@
     {
         public string FuehreAus(Scorecard scorecard)
         {
-            return string.Format("Gesamtschlaege: {0}", scorecard.GesamtAnzahlSchlaege);
+            return string.Format("Gesamtzahl deiner Schlaege ist: {0}", scorecard.GesamtAnzahlSchlaege);
         }
     }
 }
