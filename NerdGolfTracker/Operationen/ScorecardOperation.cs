@@ -5,7 +5,7 @@ using System.Text;
 
 namespace NerdGolfTracker.Operationen
 {
-    public class ScorecardOperation : Operation
+    public class ScorecardOperation : IOperation
     {
         private  const  string cSchlaege = "Schlaege";
         private  const  string cLoch = "Loch";
