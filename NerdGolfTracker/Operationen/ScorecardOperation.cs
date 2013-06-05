@@ -7,7 +7,7 @@ namespace NerdGolfTracker.Operationen
 {
     public class ScorecardOperation : Operation
     {
-        private string c_Header = " Loch | Schläge" + Environment.NewLine;
+        private readonly string c_Header = " Loch | Schläge" + Environment.NewLine;
         public string FuehreAus(Scorecard scorecard)
         {
             String gesamtAnzeige = c_Header;

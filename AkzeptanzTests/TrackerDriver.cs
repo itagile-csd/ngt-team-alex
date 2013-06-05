@@ -43,5 +43,10 @@ namespace AkzeptanzTests
         {
             Assert.That(_antwort, Contains.Substring(string.Format(format, objects)));
         }
+
+        public string GetLetzteAntwort()
+        {
+            return _antwort;
+        }
     }
 }
