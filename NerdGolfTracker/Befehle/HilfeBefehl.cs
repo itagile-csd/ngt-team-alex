@@ -2,7 +2,7 @@ using NerdGolfTracker.Operationen;
 
 namespace NerdGolfTracker.Befehle
 {
-    public class HilfeBefehl : Befehl
+    public class HilfeBefehl : IBefehl
     {
         public string Kommando
         {
@@ -14,7 +14,7 @@ namespace NerdGolfTracker.Befehle
             get { return "h"; }
         }
 
-        public Operation Operation
+        public IOperation Operation
         {
             get { return new Hilfe(); }
         }

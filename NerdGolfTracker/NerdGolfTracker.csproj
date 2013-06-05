@@ -34,7 +34,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Befehl.cs" />
+    <Compile Include="IBefehl.cs" />
     <Compile Include="Befehle\GesamtschlaegeBefehl.cs" />
     <Compile Include="Befehle\HilfeBefehl.cs" />
     <Compile Include="Befehle\LochAnzeigenBefehl.cs" />
@@ -44,8 +44,8 @@
     <Compile Include="Befehle\ScorecardBefehl.cs" />
     <Compile Include="EinfacherInterpreter.cs" />
     <Compile Include="EinfacheScorecard.cs" />
-    <Compile Include="Interpreter.cs" />
-    <Compile Include="Operation.cs" />
+    <Compile Include="IInterpreter.cs" />
+    <Compile Include="IOperation.cs" />
     <Compile Include="Operationen\Gesamtschlaege.cs" />
     <Compile Include="Operationen\Hilfe.cs" />
     <Compile Include="Operationen\Lochausgabe.cs" />
@@ -57,7 +57,7 @@
     <Compile Include="Tracker.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Scorecard.cs" />
+    <Compile Include="IScorecard.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />

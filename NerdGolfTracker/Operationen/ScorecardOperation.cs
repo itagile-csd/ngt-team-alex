@@ -11,7 +11,7 @@ namespace NerdGolfTracker.Operationen
         private  const  string cLoch = "Loch";
         private readonly string c_Header = " " + cLoch + " | " + cSchlaege + Environment.NewLine;
 
-        public string FuehreAus(Scorecard scorecard)
+        public string FuehreAus(IScorecard scorecard)
         {
             String gesamtAnzeige = c_Header;
             for (int i = 1; scorecard != null && i <= scorecard.ErgebnisZurueck.Count; i++)

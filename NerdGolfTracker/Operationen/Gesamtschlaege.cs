@@ -1,15 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace NerdGolfTracker.Operationen
+﻿namespace NerdGolfTracker.Operationen
 {
-    public class Gesamtschlaege : Operation
+    public class Gesamtschlaege : IOperation
     {
-        public string FuehreAus(Scorecard scorecard)
+        public string FuehreAus(IScorecard scorecard)
         {
-            return string.Format("Gesamtschlaege: {0}", scorecard.GesamtAnzahlSchlaege);
+            return string.Format("Gesamtzahl deiner Schlaege ist: {0}", scorecard.GesamtAnzahlSchlaege);
         }
     }
 }
