@@ -7,7 +7,10 @@ namespace NerdGolfTracker.Operationen
 {
     public class ScorecardOperation : Operation
     {
-        private readonly string c_Header = " Loch | Schläge" + Environment.NewLine;
+        private  const  string cSchlaege = "Schlaege";
+        private  const  string cLoch = "Loch";
+        private readonly string c_Header = " " + cLoch + " | " + cSchlaege + Environment.NewLine;
+
         public string FuehreAus(Scorecard scorecard)
         {
             String gesamtAnzeige = c_Header;
@@ -21,8 +24,7 @@ namespace NerdGolfTracker.Operationen
 
         private string GetFormattedStringForLine(int lochNummer, int schlaege)
         {
-            return lochNummer + " | " + schlaege + Environment.NewLine;
-
+            return String.Format("{0,5} | {1,8}", lochNummer, schlaege) + Environment.NewLine;
         }
 
     }
