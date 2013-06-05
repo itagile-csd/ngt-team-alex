@@ -5,12 +5,14 @@
         private IOperation _startoperation;
         private IScorecard _scorecard;
         private IInterpreter _interpreter;
+        private IOperation _fallbackOperation;
 
-        public Tracker(IInterpreter interpreter, IScorecard scorecard, IOperation startoperation)
+        public Tracker(IInterpreter interpreter, IScorecard scorecard, IOperation startoperation, IOperation fallbackOperation)
         {
             _interpreter = interpreter;
             _scorecard = scorecard;
             _startoperation = startoperation;
+            _fallbackOperation = fallbackOperation;
         }
 
         public string ReagiereAuf(string kommando)
@@ -22,7 +24,7 @@
             }
             else
             {
-                return "Unbekannter Befehl. \"Hilfe\" zeigt alle bekannten Befehle an.";
+                return _fallbackOperation.FuehreAus(_scorecard);
             }
         }
 

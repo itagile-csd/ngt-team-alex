@@ -50,6 +50,7 @@
     <Compile Include="IBefehleListe.cs" />
     <Compile Include="IInterpreter.cs" />
     <Compile Include="IOperation.cs" />
+    <Compile Include="Operationen\FallbackOperation.cs" />
     <Compile Include="Operationen\Gesamtschlaege.cs" />
     <Compile Include="Operationen\Hilfe.cs" />
     <Compile Include="Operationen\Lochausgabe.cs" />
