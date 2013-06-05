@@ -65,24 +65,29 @@ namespace AkzeptanzTests.Features
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Gesamtschlaege anzeigen 2")]
-        public virtual void GesamtschlaegeAnzeigen2()
+        [NUnit.Framework.DescriptionAttribute("Gesamtschlaege anzeigen")]
+        public virtual void GesamtschlaegeAnzeigen()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Gesamtschlaege anzeigen 2", ((string[])(null)));
-#line 5
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Gesamtschlaege anzeigen", ((string[])(null)));
+#line 3
 this.ScenarioSetup(scenarioInfo);
-#line 6
-testRunner.When("ich den Ball schlage", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Wenn ");
-#line 7
-testRunner.And("ich den Ball schlage", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Und ");
-#line 8
-testRunner.And("ich zum nächsten Loch gehe", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Und ");
+#line hidden
+            TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Loch",
+                        "Schlaege"});
+            table1.AddRow(new string[] {
+                        "1",
+                        "2"});
+            table1.AddRow(new string[] {
+                        "2",
+                        "2"});
+            table1.AddRow(new string[] {
+                        "3",
+                        "20"});
+#line 4
+ testRunner.When("ich folgendermassen spiele:", ((string)(null)), table1, "Wenn ");
 #line 9
-testRunner.And("ich den Ball schlage", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Und ");
-#line 10
-testRunner.And("ich den Ball schlage", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Und ");
-#line 11
-testRunner.Then("habe ich insgesamt 4 Schlaege", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Dann ");
+ testRunner.Then("habe ich insgesamt 24 Schlaege", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Dann ");
 #line hidden
             this.ScenarioCleanup();
         }
