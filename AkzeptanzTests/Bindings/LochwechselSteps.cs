@@ -1,4 +1,5 @@
 ﻿using TechTalk.SpecFlow;
+using NerdGolfTracker.Befehle.Commandos;
 
 namespace AkzeptanzTests.Bindings
 {
@@ -15,7 +16,7 @@ namespace AkzeptanzTests.Bindings
         [When(".*zum nächsten Loch.*")]
         public void GeheZumNaechstenLoch()
         {
-            _driver.EmpfangeAnweisung("Naechstes Loch");
+            _driver.EmpfangeAnweisung(Commando.NaechstesLoch);
         }
 
         [Then(@"zählt.* auf dem (\d+)\. (.*)\.")]
