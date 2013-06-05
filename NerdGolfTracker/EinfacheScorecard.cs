@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 
 namespace NerdGolfTracker
 {
@@ -11,7 +12,7 @@ namespace NerdGolfTracker
             private set { ergebnis[Lochnummer] = value; } 
         }
         public int Lochnummer { get; private set; }
-        public int GesamtAnzahlSchlaege { get; private set; }
+        public int GesamtAnzahlSchlaege { get { return ergebnis.Values.Sum(); } }
         public Dictionary<int, int> ErgebnisZurueck
         {
             get { return ergebnis; }
@@ -32,7 +33,6 @@ namespace NerdGolfTracker
         public void ErhoeheAnzahlSchlaege()
         {
             AnzahlSchlaege++;
-            GesamtAnzahlSchlaege++;
             ergebnis[Lochnummer] = AnzahlSchlaege;
         }
     }
