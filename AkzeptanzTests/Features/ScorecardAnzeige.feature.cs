@@ -66,11 +66,9 @@ namespace AkzeptanzTests.Features
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Scorecard anzeigen")]
-        [NUnit.Framework.IgnoreAttribute()]
         public virtual void ScorecardAnzeigen()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Scorecard anzeigen", new string[] {
-                        "ignore"});
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Scorecard anzeigen", ((string[])(null)));
 #line 3
 this.ScenarioSetup(scenarioInfo);
 #line hidden
@@ -89,7 +87,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 4
  testRunner.When("ich folgendermassen spiele:", ((string)(null)), table1, "Wenn ");
 #line 9
- testRunner.Then("erhalte ich diese Scorcard.", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Dann ");
+ testRunner.Then("erhalte ich diese Scorecard.", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Dann ");
 #line hidden
             this.ScenarioCleanup();
         }
