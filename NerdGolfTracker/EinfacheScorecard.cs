@@ -11,7 +11,16 @@ namespace NerdGolfTracker
             get { return ergebnis[Lochnummer]; }
             private set { ergebnis[Lochnummer] = value; } 
         }
-        public int Lochnummer { get; private set; }
+
+        public int Lochnummer
+        {
+            get { return ergebnis.Count; }
+                     
+            private set
+            {
+                ergebnis.Add(value, 0);
+            }
+        }
         public int GesamtAnzahlSchlaege { get { return ergebnis.Values.Sum(); } }
         public Dictionary<int, int> ErgebnisZurueck
         {
@@ -20,14 +29,12 @@ namespace NerdGolfTracker
 
         public EinfacheScorecard()
         {
-            Lochnummer = 1;
-            ergebnis.Add(Lochnummer, 0);
+            Lochnummer = 1; 
         }
 
         public void SchliesseLochAb()
         {
             Lochnummer++;
-            ergebnis.Add(Lochnummer, 0);
         }
 
         public void ErhoeheAnzahlSchlaege()
