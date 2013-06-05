@@ -26,7 +26,12 @@ namespace UnitTests
         [TestCase("xyz", Result = null)]
         public object InvalidCommand(string kommando)
         {
-            IInterpreter interpreter = new EinfacherInterpreter(new AlleBefehle());
+            List<IBefehl> alleBefehle = new List<IBefehl>();
+            alleBefehle.Add(new DummyBefehl());
+
+            var befehleMock = new Mock<IBefehleListe>();
+            befehleMock.Setup(befehl => befehl.Befehle()).Returns(alleBefehle);
+            IInterpreter interpreter = new EinfacherInterpreter(befehleMock.Object);
             return (interpreter.OperationFuer(kommando));
         }
 
@@ -45,7 +50,7 @@ namespace UnitTests
 
             public string KurzKommando
             {
-                get { throw new NotImplementedException(); }
+                get { return "d"; }
             }
 
             public string Erklaerung
